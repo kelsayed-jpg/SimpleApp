@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj": {}
+    "c:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj": {
+    "c:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj",
+        "projectUniqueName": "c:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj",
         "projectName": "SimpleApp",
-        "projectPath": "C:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj",
+        "projectPath": "c:\\Projects\\DevOpsLab\\SimpleApp\\SimpleApp.csproj",
         "packagesPath": "C:\\Users\\k.elsayed\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\DevOpsLab\\SimpleApp\\obj\\",
+        "outputPath": "c:\\Projects\\DevOpsLab\\SimpleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\k.elsayed\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -48,7 +48,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[10.0.10, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
