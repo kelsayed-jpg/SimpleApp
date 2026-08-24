@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleApp Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; padding: 40px; text-align: center; }
+        .card { background: white; max-width: 600px; margin: auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #0078d4; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
+        th { background: #0078d4; color: white; border-radius: 4px; }
+        .badge { background: #e1dfdd; padding: 4px 8px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 تطبيق SimpleApp - تجربة CI/CD</h1>
+        <p>البيانات المعروضة مسترجعة مباشرة من الـ Backend API عبر IIS</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>التاريخ</th>
+                    <th>الحرارة (°C)</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody id="data-table">
+                <tr><td colspan="3">جاري جلب البيانات...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        fetch('/weatherforecast')
+            .then(res => res.json())
+            .then(data => {
+                const tbody = document.getElementById('data-table');
+                tbody.innerHTML = '';
+                data.forEach(item => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${item.date}</td>
+                            <td>${item.temperatureC}°C</td>
+                            <td><span class="badge">${item.summary}</span></td>
+                        </tr>
+                    `;
+                });
+            })
+            .catch(err => {
+                document.getElementById('data-table').innerHTML = '<tr><td colspan="3" style="color:red">فشل جلب البيانات</td></tr>';
+            });
+    </script>
+</body>
+</html>
